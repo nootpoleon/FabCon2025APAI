@@ -1,0 +1,105 @@
+table Address
+	lineageTag: 4eab81ec-093f-4b3f-96dd-1d1b44602439
+	sourceLineageTag: [SalesLT].[Address]
+
+	column AddressID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: efb0ab53-3b6c-49ae-9ab5-7cf982337532
+		sourceLineageTag: AddressID
+		summarizeBy: count
+		sourceColumn: AddressID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine1
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 875b6d7b-ec84-4a2f-8842-f97311a0fd39
+		sourceLineageTag: AddressLine1
+		summarizeBy: none
+		sourceColumn: AddressLine1
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine2
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 18289962-6a44-4e7e-98df-feb9d04affb8
+		sourceLineageTag: AddressLine2
+		summarizeBy: none
+		sourceColumn: AddressLine2
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d05503f7-511c-46f3-9897-67e4cd7c975e
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvince
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cb5bb30c-e8a3-4253-967b-c7491c3b6707
+		sourceLineageTag: StateProvince
+		summarizeBy: none
+		sourceColumn: StateProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegion
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e3e1e90d-dc8b-4b0a-992b-bc92f3b3f797
+		sourceLineageTag: CountryRegion
+		summarizeBy: none
+		sourceColumn: CountryRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6b712618-5455-415e-bab6-1951be90bc8d
+		sourceLineageTag: PostalCode
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 57275b05-4e99-47c7-aca4-f6dbb92e4cae
+		sourceLineageTag: rowguid
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e21f591d-d91e-4423-ad79-6adb9c278778
+		sourceLineageTag: ModifiedDate
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Address = entity
+		mode: directLake
+		source
+			entityName: Address
+			schemaName: SalesLT
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
